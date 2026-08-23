@@ -23,6 +23,7 @@ class AnswerController extends Controller
             'check' => $check,
         ]);
 
+        // 表示されているIDの回答データを表示
         $result = session("quiz.answers.{$id}");
 
         return view('quiz/submit', compact('result'));

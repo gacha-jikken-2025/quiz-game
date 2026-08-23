@@ -18,19 +18,19 @@ class QuestionSeeder extends Seeder
         DB::table('questions')->insert([
             [
                 "question_id" => "1",
-                'question_text' => 'In many countries, the (      ) wears a white dress at a wedding. However, in some contries, she may wear a red dress.',
+                'question_text' => '鶏口となるも（　）後となるなかれ',
             ],
             [
                 "question_id" => "2",
-                'question_text' => 'The teacher asked her students to find Argentina on a (      ). She wanted them to learn about countries that are far away from Japan.',
+                'question_text' => '天高く（　）肥ゆる秋',
             ],
             [
                 "question_id" => "3",
-                'question_text' => 'Yuki only started studying Korean two years ago, but she can already read the newspaper without any (      ). Everyone is surpried by how quickly she has learned the language.',
+                'question_text' => '掃き溜めに（　）',
             ],
             [
                 "question_id" => "4",
-                'question_text' => "A: Are you all right? You have a (      ) to be quiet when you're worried. B: Do I? I never realized I was like that. I'm fine. I just don't have much to say today.",
+                'question_text' => "（　　）に牡丹",
             ],
         ]);
     }

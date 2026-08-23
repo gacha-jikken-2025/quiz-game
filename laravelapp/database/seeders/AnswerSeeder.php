@@ -17,7 +17,7 @@ class AnswerSeeder extends Seeder
         DB::table('answers')->insert([
             [
                 "question_id" => "1",
-                'choice_id' => '4',
+                'choice_id' => '3',
             ],
             [
                 "question_id" => "2",
