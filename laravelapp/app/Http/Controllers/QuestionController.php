@@ -9,10 +9,13 @@ class QuestionController extends Controller
 {
     public function question($id){
 
-        $question = Question::with(['choices', 'answer'])->findOrFail($id);
+        // question_idで関連する選択肢、答えを紐づける
+        $question = Question::with(['choices'])->findOrFail($id);
 
-        // Log::info("question", ["question" => $question]);
+        $correct_choice = $question->choices->where("is_correct", true)->first();
 
-        return view('quiz/quiz', compact('question'));
+        Log::info("question", ["question" => $correct_choice]);
+
+        return view('quiz/quiz', compact('question', 'correct_choice'));
     }
 }

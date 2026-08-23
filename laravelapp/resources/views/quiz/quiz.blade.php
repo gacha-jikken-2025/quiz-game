@@ -62,11 +62,7 @@
                             答えを表示する
                         </button>
                         <div class="answer hidden" id="answerWrapper">
-                            @foreach ($question->choices as $choice)
-                                @if($choice->choice_id === $question->answer->choice_id)
-                                    <p>{{$choice->choice_text}}</p>
-                                @endif
-                            @endforeach
+                            <p>{{$correct_choice->choice_text}}</p>
                         </div>
                     </div>
                 </section>

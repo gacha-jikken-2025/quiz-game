@@ -21,7 +21,11 @@
                     </div>
                     <div class="descriptionList_item">
                         <dt class="descriptionList_item_title">あなたの回答</dt>
-                        <dd class="descriptionList_item_detail">{{$answer["user_answer"]}}</dd>
+                        <dd class="descriptionList_item_detail">{{$answer["user_choice"]->choice_text}}</dd>
+                    </div>
+                    <div class="descriptionList_item">
+                        <dt class="descriptionList_item_title">答え</dt>
+                        <dd class="descriptionList_item_detail">{{$answer["answer"]->choice_text}}</dd>
                     </div>
                 </dl>
                 @endforeach

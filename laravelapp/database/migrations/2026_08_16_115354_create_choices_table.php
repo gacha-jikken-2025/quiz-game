@@ -18,6 +18,7 @@ return new class extends Migration
             $table->integer("question_id")->comment("問題のID");
             $table->integer("choice_id")->comment("選択肢のID");
             $table->string("choice_text")->comment("選択肢のテキスト");
+            $table->boolean("is_correct")->comment("選択肢の正誤");
         });
     }
 

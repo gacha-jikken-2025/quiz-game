@@ -14,8 +14,8 @@ class Choice extends Model
         return $this->belongsTo(Question::class);
     }
 
-    public function answer()
+    public function correctChoice()
     {
-        return $this->hasOne(Answer::class);
+        return $this->belongsTo(Question::class)->where('is_correct', true);
     }
 }

@@ -2,24 +2,29 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Answer;
+use App\Models\Choice;
+use App\Models\Question;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 
 class AnswerController extends Controller
 {
     public function answer(Request $request, $id){
-        $answer = Answer::with(['question'])->findOrFail($id);
-        $user_answer = $request->input('choice');
+        $question = Question::with(['choices'])->findOrFail($id);
+        $user_choice_id = $request->input('choice');
+        $user_choice = $question->choices->where("choice_id", $user_choice_id)->first();
+        $correct_choice = $question->choices->where("is_correct", true)->first();
+
+        Log::info("correct_choice", ["correct_choice" => $correct_choice]);
 
         // 回答があっているか判定
-        $check = $user_answer == $answer->choice_id;
+        $check = $user_choice_id == $correct_choice->choice_id;
 
         // sessionに記録する
         session()->put("quiz.answers.{$id}", [
-            'user_answer' => $user_answer,
-            'question' => $answer->question,
-            'answer' => $answer->choice_id,
+            'user_choice' => $user_choice,
+            'question' => $question,
+            'answer' => $correct_choice,
             'check' => $check,
         ]);
 

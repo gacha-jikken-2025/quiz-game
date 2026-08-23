@@ -21,13 +21,13 @@
                     <div class="descriptionList_item">
                         <dt class="descriptionList_item_title">あなたの回答</dt>
                         <dd class="descriptionList_item_detail">
-                            {{$result["user_answer"]}}
+                            {{$result["user_choice"]->choice_text}}
                         </dd>
                     </div>
                     <div class="descriptionList_item">
                         <dt class="descriptionList_item_title">答え</dt>
                         <dd class="descriptionList_item_detail">
-                            {{$result["answer"]}}
+                            {{$result["answer"]->choice_text}}
                         </dd>
                     </div>
                 </dl>
